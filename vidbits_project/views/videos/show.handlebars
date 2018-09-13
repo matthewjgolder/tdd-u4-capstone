@@ -1,0 +1,18 @@
+
+  <div class="contents-container" id="videos-container">  
+    <div class="video-card"></div>
+      <div id="title-div" class="video-title">
+        <h1 id="title">{{result.title}}</h1>
+      </div>
+      </div>
+      <iframe class="video-player" src="{{result.url}}" frameborder="0" allowfullscreen></iframe>
+      <div id="description-div" class="video-description">
+        <p id="description">{{result.description}}</p>
+      </div>
+      <form action="/videos/{{result._id}}/edit" method="GET">
+        <button type="submit" class="input-button" id="edit-button">Edit</button>
+      </form>
+      <form action="/videos/{{result._id}}/delete" method="POST">
+        <button type="submit" class="input-button" id="delete-button">Delete</button>
+      </form>
+  </div>  

@@ -1,0 +1,23 @@
+
+
+  Video model -
+    √ has a title and a description
+
+  VIDEO
+    POST /videos
+      √  finds a video afterwards, and redirects to the page (159ms)
+      √  does not save videos when title field is missing, status 400, shows error, preserves values (256ms)
+      √  does not save videos when url field is missing, status 400, shows error, preserves values (49ms)
+
+  /videos
+    Get /videos
+      √  finds existing videos (138ms)
+    Get /videos/${video._id}
+      √ finds a video in the database (126ms)
+    Get /videos/${video._id}/edit
+      √ finds a video in the database, displays it for editing and updates rather than inserts (155ms)
+      √ does not save invalid data, resturns status 400 and renders the edit page with the error message with previous values populated (179ms)
+
+
+  8 passing (1s)
+

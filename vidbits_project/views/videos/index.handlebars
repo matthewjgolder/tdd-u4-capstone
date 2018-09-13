@@ -1,0 +1,15 @@
+  <div id="videos-container">
+    {{#each videos as |video|}}
+    <div class="video-card">
+    </div>
+    <iframe class="video-player" src="{{video.url}}" frameborder="0" allowfullscreen></iframe>
+      <div class="video-title" onclick="location.href='videos/{{video._id}}';" style="cursor: pointer;">
+        {{video.title}}
+      </div>
+    {{/each}}
+  </div>
+
+  <form action="videos/create" class='video-card'>
+    <button type="submit" class="input-button" id="create-button">Create a video</button>
+  </form>    
+  

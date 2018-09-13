@@ -1,0 +1,30 @@
+
+    <div class="contents-container" >
+        Save a video    
+    </div>
+    <form action="/videos/{{video._id}}/updates" method="POST">
+      <input type="hidden" name="_id" id="_id-hidden" value="{{video._id}}"/>
+      <input id="title-input" name="title" value="{{video.title}}"/>
+      {{#with video.errors.title as |error|}}
+        <br/>
+        <span>{{error}}</span>
+        <br/>
+      {{/with}}
+
+      <textarea id="description-input" name="description" />{{video.description}}</textarea>
+      {{#with video.errors.description as |error|}}
+        <br/>
+        <span>{{error}}</span>
+        <br/>
+      {{/with}}
+
+      <input id="url-input" name="url" value="{{video.url}}"/>
+      {{#with video.errors.url as |error|}}
+        <br/>
+        <span>{{error}}</span>
+        <br/>
+      {{/with}}
+
+      <button type="submit" class="input-button" id="edit-button">Submit</button>
+    
+    </form>    
